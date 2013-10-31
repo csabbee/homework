@@ -14,7 +14,6 @@ public class MathProviderTest {
     private MathProvider underTest;
     private Sum sum;
     private NumberFormatter numberformatter;
-    private Validator validator;
     private IMocksControl control;
     
     

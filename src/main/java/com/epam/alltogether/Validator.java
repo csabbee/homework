@@ -1,7 +1,8 @@
 package com.epam.alltogether;
 
 public class Validator {
-    private Validator() {
+    protected Validator() {
+        throw new UnsupportedOperationException();
     }
 
     public static void validateNotNull(Object input) {
