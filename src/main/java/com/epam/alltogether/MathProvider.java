@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 public class MathProvider {
-    private static final Logger log = Logger.getLogger(MathProvider.class
-            .getName());
+    private static final Logger log = LoggerFactory.getLogger(MathProvider.class);
     private AbstractCalculator calc;
 
     public String sum(List<Integer> numbers) {

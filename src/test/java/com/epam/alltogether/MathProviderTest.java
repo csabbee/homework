@@ -33,17 +33,18 @@ public class MathProviderTest {
         List<Integer> inputList = new ArrayList<Integer>();
         Integer input1 = Integer.valueOf(100);
         Integer input2 = Integer.valueOf(23);
-        inputList.add(input2);
         inputList.add(input1);
+        inputList.add(input2);
         Integer output = Integer.valueOf(123);
-        EasyMock.expect(sum.doCalcualte(Integer.valueOf(0), input2)).andReturn(input2);
-        EasyMock.expect(sum.doCalcualte(input2, input1)).andReturn(output);
-        EasyMock.expect(sum.calculate(input1, input2)).andReturn(output);
+        EasyMock.expect(sum.doCalcualte(Integer.valueOf(0), input1)).andReturn(input1);
+        EasyMock.expect(sum.doCalcualte(input1, input2)).andReturn(output);
         EasyMock.expect(numberformatter.format(output)).andReturn(expected);
         //WHEN
         control.replay();
+        numberformatter.format(output);
         String actual = underTest.sum(inputList);
         //THEN
+        control.verify();
         Assert.assertEquals(expected, actual);
         
     }
